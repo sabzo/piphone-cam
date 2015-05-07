@@ -1,0 +1,5 @@
+Pi-Phone Cam requires the following libraries:
+Pygame:  pip install pygame
+Tweepy:  pip install tweepy
+Rpi.GPIO pip install rpi.gpio
+Create a Twitter Account and Get credentials at: https://dev.twitter.com/
