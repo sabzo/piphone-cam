@@ -1,2 +1,0 @@
-# piphone-cam
-PiPhone-Selfie

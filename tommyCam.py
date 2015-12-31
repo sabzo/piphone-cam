@@ -15,13 +15,11 @@ def take_picture():
   timestamp = date.isoformat()
   success = call(["raspistill", "-o", timestamp + ".jpg"])
   print success
-  permissions = call(["chmod", "+x", timestamp + ".jpg"]) 
-  return str(timestamp) + '.jpg' 
-
+  permissions = call(["chmod", "+x", timestamp + ".jpg"])
+  return str(timestamp) + '.jpg'
 #take_picture()
 
 pygame.mixer.init(frequency=22050, size=-16, channels=2, buffer=512)
-
 sound0 = pygame.mixer.Sound('Enter location of your 1st Soundfile here!')
 
 sound0.play()
@@ -31,14 +29,12 @@ onHook = False
 
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
-
 GPIO.setup(4, GPIO.IN) # on hook trigger
 GPIO.setup(17, GPIO.IN) # button pressed trigger
 GPIO.setup(18, GPIO.IN) # outA
 GPIO.setup(23, GPIO.IN) # outB
 GPIO.setup(24, GPIO.IN) # outC
 GPIO.setup(25, GPIO.IN) # outD
-
 GPIO.setup(27, GPIO.IN) # coin in 1
 
 sound1 = pygame.mixer.Sound('Enter location of your 2nd soundfile here!')
@@ -76,7 +72,7 @@ def playKey(keyNum):
         	stopSound()
         	sound1.play()
 		photo_name = take_picture()
-		print 'photo name: ' + str(photo_name) 
+		print 'photo name: ' + str(photo_name)
 		# Consumer keys and access tokens, used for OAuth
 		consumer_key = 'Enter your Twitter Consumer Key here!'
 		consumer_secret = 'Enter your Twitter Consumer Secret Key here!'
@@ -102,7 +98,6 @@ def playKey(keyNum):
         	print('pressed #')
 
 # Maps binary output to a button number.
-
 def keyPress(outA, outB, outC, outD):
 	if(outA == 1 and outB == 0 and outC == 0 and outD == 0):
 		return "2"
